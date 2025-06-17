@@ -3,10 +3,14 @@ provider "aws" {
  }
 
 resource "aws_instance" "one" {
-  count = 2
   ami           = "ami-00b7ea845217da02c"
   instance_type = "t2.micro"
   tags = {
     Name = "dev-server"
   }
 }
+resource "aws_s3_bucket" "two" {
+  bucket     = "terraformbucketabcd123"
+}
+
+
